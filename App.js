@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logo from './assets/logo.png';
 import {
   StyleSheet,
   SafeAreaView,
@@ -23,7 +24,7 @@ export default function Example() {
             alt="App Logo"
             resizeMode="contain"
             style={styles.headerImg}
-            source={{ uri: '' }} />
+            source={Logo} />
           <Text style={styles.title}>
             Sign up to <Text style={{ color: '#751f1fff', textAlign: 'center' }}>UBTutorConnect</Text>
           </Text>
@@ -183,18 +184,19 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     color: '#929292',
+    
   },
   /** Header */
   header: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 36,
+    marginVertical: 8,
   },
   headerImg: {
-    width: 80,
-    height: 80,
+    width: 150,
+    height: 150,
     alignSelf: 'center',
-    marginBottom: 36,
+    marginBottom: 8,
   },
   /** Form */
   form: {
