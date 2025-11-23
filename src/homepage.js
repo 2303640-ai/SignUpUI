@@ -2,8 +2,7 @@ import React from 'react';
 import Logo from './assets/logo.png';
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
 
-// REMOVED ICONS: Rollup sandbox cannot bundle @expo/vector-icons
-// Replaced icon components with simple emoji placeholders to avoid bundling failures
+
 
 const StudentHomePage = () => {
   return (
