@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logo from 'assets/logo.png';                                                                             
 import {
   StyleSheet,
   SafeAreaView,
@@ -21,13 +22,12 @@ const LoginScreen = () => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
-            alt="App Logo"
-            resizeMode="contain"
-            style={styles.headerImg}
-            source={{ uri: '' }} />
-
+          source={require('./assets/logo.png')}
+          style={styles.headerImg}
+          resizeMode="contain"
+          />
           <Text style={styles.title}>
-            Sign in to <Text style={{ color: '#751f1fff' }}>UBTutorConnect</Text>
+            Sign in to <Text style={{ color: '#751f1fff' }}>UB-TutorConnect</Text>
           </Text>
 
           <Text style={styles.subtitle}>
@@ -125,8 +125,8 @@ const styles = StyleSheet.create({
     marginVertical: 36,
   },
   headerImg: {
-    width: 80,
-    height: 80,
+    width: 150,
+    height: 150,
     alignSelf: 'center',
     marginBottom: 36,
   },
