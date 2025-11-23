@@ -12,12 +12,15 @@ import {
 } from 'react-native';
 import LoginScreen from './src/loginscreen';
 import SignUpScreen from './src/signUpscreen';
+import StudentHomePage from './src/homepage';
+
 
 export default function App() {
 return(
   <>
-     {/* <LoginScreen /> */}
-     <SignUpScreen /> 
+     <LoginScreen />
+    <SignUpScreen />
+     <StudentHomePage />
   </>
 );
 }
