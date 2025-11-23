@@ -130,7 +130,6 @@ const SignUpScreen = () => {
             <TextInput
               autoCorrect={false}
               clearButtonMode="while-editing"
-              onChangeText={password => setForm({ ...form, password })}
               placeholder="********"
               placeholderTextColor="#6b7280"
               style={styles.inputControl}
@@ -250,5 +249,6 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
+
 
 export default SignUpScreen;
