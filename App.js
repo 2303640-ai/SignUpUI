@@ -141,27 +141,12 @@ export default function Example() {
                 // handle onPress
               }}>
               <View style={styles.btn}>
-                <Text style={styles.btnText}>Sign in</Text>
+                <Text style={styles.btnText}>Sign Up</Text>
               </View>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              // handle link
-            }}>
-            <Text style={styles.formLink}>Forgot password?</Text>
-          </TouchableOpacity>
         </View>
       </View>
-      <TouchableOpacity
-        onPress={() => {
-          // handle link
-        }}>
-        <Text style={styles.formFooter}>
-          Don't have an account?{' '}
-          <Text style={{ textDecorationLine: 'underline' }}>Sign up</Text>
-        </Text>
-      </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -178,6 +163,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#1D2A32',
     marginBottom: 6,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 15,
