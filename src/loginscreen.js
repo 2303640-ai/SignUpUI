@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from 'assets/logo.png';                                                                             
+import Logo from './assets/logo.png';                                                                          
 import {
   StyleSheet,
   SafeAreaView,
@@ -22,10 +22,10 @@ const LoginScreen = () => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
-          source={require('./assets/logo.png')}
-          style={styles.headerImg}
-          resizeMode="contain"
-          />
+            alt="App Logo"
+            resizeMode="contain"
+            style={styles.headerImg}
+            source={Logo} />
           <Text style={styles.title}>
             Sign in to <Text style={{ color: '#751f1fff' }}>UB-TutorConnect</Text>
           </Text>
