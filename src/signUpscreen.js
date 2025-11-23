@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from 'assets/logo.png';
+import Logo from './assets/logo.png';
 import {
   StyleSheet,
   SafeAreaView,
@@ -11,7 +11,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from 'react-native';
-
+ 
 
 const SignUpScreen = () => {
   const [form, setForm] = useState({
@@ -25,10 +25,10 @@ const SignUpScreen = () => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
-          source={require('./assets/logo.png')}
-          style={styles.headerImg}
-          resizeMode="contain"
-          />  
+            alt="App Logo"
+            resizeMode="contain"
+            style={styles.headerImg}
+            source={Logo} />  
           <Text style={styles.title}>
             Sign up to <Text style={{ color: '#751f1fff', textAlign: 'center' }}>UB-TutorConnect</Text>
           </Text>
