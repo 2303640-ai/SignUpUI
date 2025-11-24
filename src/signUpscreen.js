@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Logo from './assets/logo.png';
+import Logo from '../assets/logo.png';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   StyleSheet,
-  SafeAreaView,
   View,
   Image,
   Text,
