@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Logo from './assets/logo.png';                                                                          
+import Logo from '../assets/logo.png';
+import { SafeAreaView } from 'react-native-safe-area-context';                                                                          
 import {
   StyleSheet,
-  SafeAreaView,
   View,
   Image,
   Text,
@@ -22,7 +22,6 @@ const LoginScreen = () => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
-            alt="App Logo"
             resizeMode="contain"
             style={styles.headerImg}
             source={Logo} />
