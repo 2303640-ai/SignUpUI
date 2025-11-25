@@ -1,7 +1,16 @@
-import {NavigationContainer} from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginScreen from "./src/LoginScreen";
-import SignUpScreen from "./src/SignUpScreen";
+import React, { useState } from 'react';
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  Image,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  KeyboardAvoidingView,
+} from 'react-native';
+import LoginScreen from './src/loginscreen';
+import SignUpScreen from './src/signUpscreen';
 
 
 
