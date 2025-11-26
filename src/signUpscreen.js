@@ -13,21 +13,35 @@ import {
 } from 'react-native';
  
 
-const SignUpScreen = () => {
+const SignUpScreen = ({ navigation }) => {
   const [form, setForm] = useState({
+    first_name: '',
+    last_name: '',
+    contact_number: '',
     email: '',
+    student_number: '',
+    level: '',
+    course: '',
     password: '',
   });
+
+  const handleSignUp = () => {
+    
+    console.log('Attempting sign up with:', form.email);
+    
+    
+  };
+  
   return (
   <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
     <SafeAreaView style={{ flex: 1, backgroundColor: '#e8ecf4' }}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
             resizeMode="contain"
             style={styles.headerImg}
-            source={Logo} />  
+            source={Logo} /> 
           <Text style={styles.title}>
             Sign up to <Text style={{ color: '#751f1fff', textAlign: 'center' }}>UB-TutorConnect</Text>
           </Text>
@@ -39,7 +53,8 @@ const SignUpScreen = () => {
           <View style={styles.input}>
             <Text style={styles.inputLabel}>First Name</Text>
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize="words"
+              
               autoCorrect={false}
               clearButtonMode="while-editing"
               keyboardType="default"
@@ -52,7 +67,8 @@ const SignUpScreen = () => {
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Last Name</Text>
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize="words"
+              
               autoCorrect={false}
               clearButtonMode="while-editing"
               keyboardType="default"
@@ -66,6 +82,7 @@ const SignUpScreen = () => {
             <Text style={styles.inputLabel}>Contact Number</Text>
             <TextInput
               autoCapitalize="none"
+              
               autoCorrect={false}
               clearButtonMode="while-editing"
               keyboardType="number-pad"
@@ -92,6 +109,7 @@ const SignUpScreen = () => {
             <Text style={styles.inputLabel}>Student Number</Text>
             <TextInput
               autoCapitalize="none"
+              
               autoCorrect={false}
               clearButtonMode="while-editing"
               keyboardType="numeric"
@@ -104,7 +122,8 @@ const SignUpScreen = () => {
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Academic Level</Text>
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize="words"
+              
               autoCorrect={false}
               clearButtonMode="while-editing"
               keyboardType="default"
@@ -117,7 +136,8 @@ const SignUpScreen = () => {
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Course (College student only)</Text>
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize="words"
+            
               autoCorrect={false}
               clearButtonMode="while-editing"
               keyboardType="default"
@@ -130,6 +150,7 @@ const SignUpScreen = () => {
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Password</Text>
             <TextInput
+              // FIX: Changed string "false" to boolean {false}
               autoCorrect={false}
               clearButtonMode="while-editing"
               onChangeText={password => setForm({ ...form, password })}
@@ -140,10 +161,7 @@ const SignUpScreen = () => {
               value={form.password} />
           </View>
           <View style={styles.formAction}>
-            <TouchableOpacity
-              onPress={() => {
-                // handle onPress
-              }}>
+            <TouchableOpacity onPress={handleSignUp}>
               <View style={styles.btn}>
                 <Text style={styles.btnText}>Sign Up</Text>
               </View>
@@ -156,7 +174,11 @@ const SignUpScreen = () => {
   </KeyboardAvoidingView>
   );
 }
+
 const styles = StyleSheet.create({
+  scrollViewContent: {
+    flexGrow: 1,
+  },
   container: {
     flexGrow: 1,
     flexShrink: 1,
@@ -174,6 +196,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     color: '#929292',
+    textAlign: 'center',
   },
   /** Header */
   header: {

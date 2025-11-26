@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../assets/logo.png';
-import { SafeAreaView } from 'react-native-safe-area-context';                                                                          
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   StyleSheet,
   View,
@@ -11,11 +11,22 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 
-const LoginScreen = () => {
+
+const LoginScreen = ({ navigation }) => {
   const [form, setForm] = useState({
     email: '',
     password: '',
   });
+
+  const handleSignUpPress = () => {
+    navigation.navigate('SignUpScreen');
+  };
+
+  const handleLoginPress = () => {
+  
+    console.log('Attempting login with:', form.email);
+  };
+
   return (
   <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
     <SafeAreaView style={{ flex: 1, backgroundColor: '#e8ecf4' }}>
@@ -54,6 +65,7 @@ const LoginScreen = () => {
             <Text style={styles.inputLabel}>Password</Text>
 
             <TextInput
+          
               autoCorrect={false}
               clearButtonMode="while-editing"
               onChangeText={password => setForm({ ...form, password })}
@@ -65,10 +77,7 @@ const LoginScreen = () => {
           </View>
 
           <View style={styles.formAction}>
-            <TouchableOpacity
-              onPress={() => {
-                // handle onPress
-              }}>
+            <TouchableOpacity onPress={handleLoginPress}>
               <View style={styles.btn}>
                 <Text style={styles.btnText}>Sign in</Text>
               </View>
@@ -77,17 +86,15 @@ const LoginScreen = () => {
 
           <TouchableOpacity
             onPress={() => {
-              // handle link
+              // handle link for forgot password
+              console.log('Forgot password pressed');
             }}>
             <Text style={styles.formLink}>Forgot password?</Text>
           </TouchableOpacity>
         </View>
       </View>
 
-      <TouchableOpacity
-        onPress={() => {
-          // handle link
-        }}>
+      <TouchableOpacity onPress={handleSignUpPress}>
         <Text style={styles.formFooter}>
           Don't have an account?{' '}
           <Text style={{ textDecorationLine: 'underline' }}>Sign up</Text>
@@ -116,6 +123,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     color: '#929292',
+    textAlign: 'center',
   },
   /** Header */
   header: {
